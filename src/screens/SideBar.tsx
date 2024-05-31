@@ -421,6 +421,16 @@ const SideBar: React.FC = () => {
   const theme = useSelector(Theme);
   const navigate = useNavigate();
   const [isAdmin, setIsAdmin] = useState<boolean>(false);
+const [isLoading, setIsLoading] = useState<boolean>(true);
+
+useEffect(() => {
+    const userString = localStorage.getItem('user');
+    if (userString) {
+        const user = JSON.parse(userString);
+        setIsAdmin(user.IsAdmin);
+    }
+    setIsLoading(false);
+}, []);
 
   const logout = () => {
     localStorage.clear();
@@ -428,13 +438,13 @@ const SideBar: React.FC = () => {
     handleToggle();
   };
 
-  useEffect(() => {
-    const userString = localStorage.getItem('user');
-    if (userString) {
-      const user = JSON.parse(userString);
-      setIsAdmin(user.IsAdmin);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const userString = localStorage.getItem('user');
+  //   if (userString) {
+  //     const user = JSON.parse(userString);
+  //     setIsAdmin(user.IsAdmin);
+  //   }
+  // }, []);
 
   const isOpen = useSelector((state: RootState) => state.drawer.isOpen);
   const dispatch: AppDispatch = useDispatch();
@@ -447,6 +457,11 @@ const SideBar: React.FC = () => {
     <div className={theme}>
       <div className="sm:grid sm:grid-cols-5 sm:grid-rows-1 h-screen">
         <div className={`${isOpen ? "max-sm:w-full z-10 " : "max-sm:hidden"} overflow-y-auto py-5 px-3 h-screen bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700 col-span-1 row-start-1 row-span-1 flex flex-col justify-between`}>
+          {
+            isLoading?(
+              <div>Loading...</div>
+            ):
+(
           <div>
             <button onClick={handleToggle} className='sm:hidden mb-4'>
               <CloseIcon />
@@ -569,6 +584,9 @@ const SideBar: React.FC = () => {
               </ul>
             )}
           </div>
+          )
+          
+          }
           <div className="flex flex-row justify-center items-center">
             <button
               type="button"
