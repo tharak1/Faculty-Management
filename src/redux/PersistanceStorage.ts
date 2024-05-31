@@ -3,7 +3,7 @@ import {persistReducer} from "redux-persist";
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import themeReducer from "./ThemeSlice";
 import drawerReducer from './DrawerSlice'
-
+import facultyReducer from './FacultySlice'
 
 const persistConfig = {
     key:"root",
@@ -14,6 +14,7 @@ const persistConfig = {
 const reducer = combineReducers({
     theme:themeReducer,
     drawer: drawerReducer,
+    faculty:facultyReducer
 });
 
 const persistedReducer = persistReducer(persistConfig,reducer);

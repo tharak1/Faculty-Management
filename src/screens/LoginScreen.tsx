@@ -12,7 +12,6 @@ const LoginScreen:React.FC = () => {
     const [password, setPassword] = useState("");
     const [visible, setVisible] = useState(false);
     const [loading, setLoading] = useState<boolean>(false);
-
     const navigate = useNavigate();
 
     const toggleVisibility = () => {
@@ -31,8 +30,12 @@ const LoginScreen:React.FC = () => {
         });
         if (response.status === 200) {
           localStorage.setItem('user', JSON.stringify(response.data));
-          localStorage.setItem('admin',response.data.IsAdmin?"true":"false");
+          // localStorage.setItem('admin',response.data.IsAdmin?"true":"false");
+          const isAdmin = response.data.IsAdmin;
+          localStorage.setItem('admin', isAdmin ? 'true' : 'false');
           // console.log(JSON.stringify(response.data));
+          // dispatch(setFaculty(response.data));
+          navigate("/app/home");
         } else {
           console.log('Something went wrong');
         }
@@ -58,7 +61,6 @@ const LoginScreen:React.FC = () => {
             localStorage.setItem('token', token);
             console.log('Login successful');
             getData();
-            navigate("/app/home");
             setLoading(false);
           } else {
             console.error('Unexpected status code:', response.status);
