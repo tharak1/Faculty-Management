@@ -585,7 +585,7 @@ const SideBar: React.FC = () => {
             </button>
           </div>
         </div>
-        <div className="sm:col-span-4 row-start-1 row-span-1 h-screen overflow-y-auto">
+        <div className={`${isOpen ? "max-sm:hidden " : ""} sm:col-span-4 row-start-1 row-span-1 h-screen overflow-y-auto`}>
           <Outlet />
         </div>
       </div>
