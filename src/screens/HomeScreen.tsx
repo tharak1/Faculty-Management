@@ -87,7 +87,7 @@ const HomeScreen: React.FC = () => {
       </div>
 
       {loading ? (
-        <div className="col-span-1 sm:col-span-2 row-span-4 p-2 sm:p-4 flex justify-center items-center rounded-md bg-slate-100">
+        <div className="col-span-1 mt-2 sm:col-span-2 row-span-4 p-2 sm:p-4 flex justify-center items-center rounded-md bg-slate-100">
           <p>Loading...</p>
         </div>
       ) : error ? (
@@ -95,9 +95,9 @@ const HomeScreen: React.FC = () => {
           <p>{error}</p>
         </div>
       ) : (
-        <div className="col-span-1 sm:col-span-2 sm:row-span-4  p-2 sm:p-4">
+        <div className="col-span-1 sm:col-span-2 sm:row-span-4 mt-2 p-2 sm:p-4">
           <div className="w-full h-full rounded-md bg-slate-100 dark:bg-slate-700 dark:text-white p-4 flex flex-col sm:flex-row">
-            <div className="w-full max-sm:flex max-sm:flex-row flex flex-col sm:flex-row justify-start items-center sm:items-start border-b-2 sm:border-b-0 sm:border-r-2 border-slate-300 dark:border-slate-900 p-2 sm:p-4">
+            <div className="w-full max-sm:flex max-sm:flex-row flex flex-col sm:flex-row justify-start items-center sm:items-center border-b-2 sm:border-b-0 sm:border-r-2 border-slate-300 dark:border-slate-900 p-2 sm:p-4">
               <div className="flex-shrink-0  ">
                 <img
                   src="https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg"
