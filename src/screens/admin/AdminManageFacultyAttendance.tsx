@@ -20,7 +20,7 @@ const AdminManageFacultyAttendance: React.FC = () => {
   const [loading1, setLoading1] = useState<boolean>(true);
 
 
-  console.log(loading,error);
+  console.log(error);
 
 
   const syncData = async () => {

@@ -29,7 +29,7 @@ const AdminAssignTimeTable: React.FC = () => {
   const [isFormValid, setIsFormValid] = useState<boolean>(false);
   const [isOpen1, setIsOpen1] = useState<boolean>(false);
 
-  console.log(loading,error);
+  console.log(error);
   
 
   const closeModal1 = () => {

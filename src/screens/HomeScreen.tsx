@@ -109,8 +109,8 @@ const HomeScreen: React.FC = () => {
                 <p className="text-md sm:text-lg font-semibold">Name: {facultyData!.FacultyName}</p>
                 <p className="text-md sm:text-lg">Id: {facultyData!.FacultyId}</p>
                 <p className="text-md sm:text-lg">Designation: {facultyData!.FacultyDesignation}</p>
-                <p className="text-md sm:text-lg">Classes : {facultyData?.Classes.map((obj)=>(
-                  <span>{obj.Department}-{obj.Section}</span>
+                <p className="text-md sm:text-lg">Classes : {facultyData?.Classes.map((obj,index)=>(
+                  <span key={index}>{obj.Department}-{obj.Section}</span>
                 ))}</p>
               </div>
             </div>
