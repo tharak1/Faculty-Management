@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import logo from '../assets/react.svg';
+import logo from '../assets/cmr-logo.png';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import axios from 'axios';
@@ -77,7 +77,7 @@ const LoginScreen: React.FC = () => {
       <div className="w-full px-6 py-8 md:px-8 lg:w-1/4 border-2 border-gray-300 rounded-lg">
         
         <div className='flex flex-row justify-center items-center'>
-          <img src={logo} alt="" className='h-24 w-24' />
+          <img src={logo} alt="" className='h-32 w-32 object-fill' />
         </div>
         <div className="mt-4">
           <label className="block mb-2 text-sm font-medium text-gray-600" htmlFor="LoggingEmailAddress">Faculty ID / Username</label>
