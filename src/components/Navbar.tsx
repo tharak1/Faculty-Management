@@ -20,7 +20,7 @@ const Navbar:React.FC = () => {
     </div>
     <div className="flex items-center space-x-4">
       <img src={logo} alt="" className="h-full w-16 sm:w-20 object-cover" />
-      <div className='text-lg font font-semibold '>CMR COLLEGE OF ENGINEERING AND TECHNOLOGY</div>
+      <div className='text-lg font font-semibold '>MALLA REDDY ENGINEERING COLLEGE</div>
     </div>
   </div>
   )
