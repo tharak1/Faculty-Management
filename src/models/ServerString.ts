@@ -1,4 +1,4 @@
-const serverString:string = "https://cmrit-server.vercel.app"
+const serverString:string = "https://faculty-management-server.vercel.app"
 
 export default serverString;
 // localhost : http://localhost:3000
